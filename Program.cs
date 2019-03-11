@@ -40,10 +40,47 @@ namespace student_exercises
          
 
           //Create 4, or more, students and assign them to one of the cohorts.
-          
+          Student mary = new Student("Mary", "Remo", "@MaryRemo", C29);
+          C29.StudentList.Add(mary); 
+
+          Student brittany = new Student("Brittany", "Ramos-Janeway", "@BrittanyRJ", C29);
+          C29.StudentList.Add(brittany); 
+
+          Student enrique = new Student("Enrique", "Iglesias", "@Enrique", E1);
+          E1.StudentList.Add(enrique); 
+
+          Student samuel = new Student("Samuel L.", "Jackson", "@SammyJ", C30);
+          C30.StudentList.Add(samuel);
+
           //Create 3, or more, instructors and assign them to one of the cohorts.
+          Instructor andy = new Instructor("Andy", "Collins", "@AndyCollins", C29);
+          C29.InstructorList.Add(andy); 
+
+          Instructor celine = new Instructor("Celine", "Dion", "@ItsCeline", E1);
+          E1.InstructorList.Add(celine); 
+
+          Instructor jisie = new Instructor("Jisie", "David", "@Jisie", C30);
+          C30.InstructorList.Add(jisie); 
+
           //Have each instructor assign 2 exercises to each of the students.
-  
+          //do this by assigning to entire cohort; logic defined in Instructor.cs
+          andy.Assign(C29, MyFirstWebpage);
+          andy.Assign(C29, CSharpClasses);
+          celine.Assign(E1, MyFirstWebpage);
+          celine.Assign(E1, FlexboxPractice);
+          jisie.Assign(C30, FlexboxPractice);
+          jisie.Assign(C30, ArrayMethods);
+
+          /* -------OUTPUT--------
+              Andy assigned My First Webpage to Mary
+              Andy assigned My First Webpage to Brittany
+              Andy assigned Dictionaries and Lists to Mary
+              Andy assigned Dictionaries and Lists to Brittany
+              Celine assigned My First Webpage to Enrique
+              Celine assigned Flexbox Practice to Enrique
+              Jisie assigned Flexbox Practice to Samuel L.
+              Jisie assigned Array Methods to Samuel L.
+           */
         }
     }
 }
