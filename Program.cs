@@ -102,6 +102,14 @@ namespace student_exercises
 
             //String.Join method: concatenates the elements of a specified array using the specified separator between each element
              Console.WriteLine($"{student.FirstName} {student.LastName} is working on {String.Join(", ", ExercisesInProgress)}");
+
+             //----OUTPUT------
+              /* 
+              Mary Remo is working on My First Webpage, Dictionaries and Lists
+              Brittany Ramos-Janeway is working on My First Webpage, Dictionaries and Lists
+              Enrique Iglesias is working on My First Webpage, Flexbox Practice
+              Samuel L. Jackson is working on Flexbox Practice, Array Methods 
+              */
            }
         }
     }
