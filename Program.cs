@@ -28,7 +28,7 @@ namespace student_exercises
             Language = "JavaScript"
           };
 
-          Exercise CSharpClasses = new Exercise() {
+          Exercise CSharpOrientation = new Exercise() {
             Name = "Dictionaries and Lists", 
             Language = "CSharp"
           };
@@ -65,7 +65,7 @@ namespace student_exercises
           //Have each instructor assign 2 exercises to each of the students.
           //do this by assigning to entire cohort; logic defined in Instructor.cs
           andy.Assign(C29, MyFirstWebpage);
-          andy.Assign(C29, CSharpClasses);
+          andy.Assign(C29, CSharpOrientation);
           celine.Assign(E1, MyFirstWebpage);
           celine.Assign(E1, FlexboxPractice);
           jisie.Assign(C30, FlexboxPractice);
@@ -81,6 +81,28 @@ namespace student_exercises
               Jisie assigned Flexbox Practice to Samuel L.
               Jisie assigned Array Methods to Samuel L.
            */
+
+           //Create a list of students. Add all of the student instances to it.
+           //different from StudentList in that StudentList is relative to each cohort
+           List<Student> AllStudents = new List<Student>() {
+             mary, brittany, enrique, samuel
+           };
+            
+           //<<CHALLENGE INSTRUCTIONS>> Create a list of exercises. Add all of the exercise instances to it.
+           // ^ list already exists in Student.cs and code runs properly without adding another
+
+           //Generate a report that displays which students are working on which exercises.
+           foreach (Student student in AllStudents) {
+             List<string> ExercisesInProgress = new List<string>();
+
+            //ExerciseList was defined in Student.cs, which uses the class 'Exercise'
+             foreach (Exercise exercise in student.ExerciseList) {
+               ExercisesInProgress.Add(exercise.Name);
+             };
+
+            //String.Join method: concatenates the elements of a specified array using the specified separator between each element
+             Console.WriteLine($"{student.FirstName} {student.LastName} is working on {String.Join(", ", ExercisesInProgress)}");
+           }
         }
     }
 }
