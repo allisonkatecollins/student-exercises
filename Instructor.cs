@@ -22,10 +22,10 @@ namespace student_exercises
       //method to assign exercise to a student
       public void Assign(Cohort cohort, Exercise exercise) {
         //assign to every student in the cohort
-        foreach (Student student in cohort.StudentList) {
+        /* foreach (Student student in cohort.StudentList) {
           student.ExerciseList.Add(exercise);
           Console.WriteLine($"{FirstName} assigned {exercise.Name} to {student.FirstName}");
-        }
+        } */
       }
     }
 }
